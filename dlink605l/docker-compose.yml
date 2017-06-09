@@ -1,0 +1,12 @@
+version: '2'
+services:
+ qemu:
+  build: ./qemu-user-static-docker/
+  volumes:
+  - ./dlink605.tar:/root/dlink605.tar
+  - ./start.sh:/tmp/start.sh
+  - ./apmib-ld.so:/tmp/apmib-ld.so
+  command: /bin/sh /tmp/start.sh
+  ports:
+  - "80:80"
+  - "1234:1234"
