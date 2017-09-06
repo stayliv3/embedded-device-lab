@@ -1,0 +1,12 @@
+version: '2'
+services:
+ qemu:
+  build: ./qemu-user-static-docker/
+  volumes:
+  - ./nc:/root/nc
+  - ./passwd:/root/etc/passwd
+  - ./start.sh:/tmp/start.sh
+  command: /bin/sh /tmp/start.sh
+  ports:
+  - "8888:8888/udp"
+  - "1234:1234"
