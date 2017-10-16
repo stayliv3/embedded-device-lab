@@ -1,0 +1,13 @@
+version: '2'
+services:
+ binwalk:
+  build: ./binwalk/
+  volumes:
+    - ./start.sh:/tmp/start.sh
+  # - "8888:8888/udp"
+  # - "1234:1234"  volumes:
+  # - ./nc:/root/nc
+  # - ./passwd:/root/etc/passwd
+  # 
+  command: /bin/sh /tmp/start.sh
+  # ports:
